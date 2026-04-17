@@ -1,0 +1,4 @@
+hyprlock
+hypridle
+hyprpicker
+swaync

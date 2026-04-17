@@ -1,0 +1,15 @@
+hyprland
+waybar
+wlogout
+kitty
+rofi
+ly
+impala
+bluetui
+awww
+wl-clipboard
+hyprshot
+xdg-user-dirs
+networkmanager
+network-manager-applet
+polkit-gnome

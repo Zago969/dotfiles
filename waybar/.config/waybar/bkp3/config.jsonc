@@ -1,0 +1,220 @@
+{
+    "layer": "top",
+    "margin-top": 6,
+    "height": 34,
+    "width": 1900,
+    "spacing": 0,
+    // =========================================================================
+    // LAYOUT
+    // =========================================================================
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/separator",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "custom/gap",
+        // ── laptop only ──────────────────────────────────────────────────────
+        // "backlight",
+        // "custom/separator",
+        // "battery",
+        // "custom/separator",
+        // ─────────────────────────────────────────────────────────────────────
+        "cpu",
+        "custom/separator",
+        "memory",
+        "custom/separator",
+        "pulseaudio",
+        "custom/separator",
+        "network",
+        "custom/separator",
+        "bluetooth",
+        "custom/separator",
+        "custom/dunst"
+    ],
+    // =========================================================================
+    // LEFT
+    // =========================================================================
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+    "hyprland/window": {
+        "max-length": 60,
+        "separate-outputs": true,
+        "rewrite": {
+            // strip common suffixes so you see just the app name
+            "(.*) — Mozilla Firefox": "󰈹  $1",
+            "(.*) - fish": "  $1",
+            "(.*) - zsh": "  $1",
+            "(.*) - nvim": "  $1",
+            "(.*)": "$1"
+        }
+    },
+    // =========================================================================
+    // CENTER
+    // =========================================================================
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a, %d %b  ·  %H:%M:%S}",
+        "interval": 1,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#E6EEF3'><b>{}</b></span>",
+                "days": "<span color='#8B949E'>{}</span>",
+                "weeks": "<span color='#6E7681'>W{}</span>",
+                "weekdays": "<span color='#C9D1D9'><b>{}</b></span>",
+                "today": "<span color='#F0F6FC'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    // =========================================================================
+    // RIGHT — UTILITIES
+    // =========================================================================
+    "custom/separator": {
+        "format": "/",
+        "interval": "once",
+        "tooltip": false
+    },
+    // Invisible spacer between tray and first module
+    "custom/gap": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8,
+        "show-passive-items": true
+    },
+    // =========================================================================
+    // RIGHT — LAPTOP ONLY (uncomment on laptop)
+    // =========================================================================
+    // "backlight": {
+    //     "device": "intel_backlight",
+    //     "format": "{icon} {percent}%",
+    //     "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󰖙"],
+    //     "on-scroll-up": "brightnessctl set +5%",
+    //     "on-scroll-down": "brightnessctl set 5%-",
+    //     "smooth-scrolling-threshold": 1,
+    //     "tooltip": false
+    // },
+    // "battery": {
+    //     "states": {
+    //         "good":     95,
+    //         "warning":  30,
+    //         "critical": 15
+    //     },
+    //     "format":          "{icon} {capacity}%",
+    //     "format-charging": "󰂄 {capacity}%",
+    //     "format-plugged":  "󰚥 {capacity}%",
+    //     "format-full":     "󰁹",
+    //     "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+    //     "tooltip-format": "{timeTo}  ·  {power:.1f}W",
+    //     "interval": 30
+    // },
+    // =========================================================================
+    // RIGHT — SYSTEM
+    // =========================================================================
+    "cpu": {
+        "interval": 5,
+        "format": "󰍛 {usage}%",
+        "format-alt": "󰍛 {avg_frequency:.1f}GHz",
+        "tooltip": false,
+        "on-click": "ghostty -e btop"
+    },
+    "memory": {
+        "interval": 10,
+        "format": "󰘚 {percentage}%",
+        "format-alt": "󰘚 {used:0.1f}G",
+        "tooltip-format": "{used:0.1f} GiB / {total:0.1f} GiB",
+        "on-click": "ghostty -e btop"
+    },
+    // =========================================================================
+    // RIGHT — AUDIO
+    // =========================================================================
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰 {volume}%",
+        "format-muted": "󰖁 muted",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "scroll-step": 2,
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "tooltip-format": "{desc}",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+    // =========================================================================
+    // RIGHT — NETWORK
+    // =========================================================================
+    "network": {
+        "interface": "wlan0",
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-disconnected": "󰤭 offline",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "tooltip-format-wifi": "{essid}\n{signalStrength}%  ·  {ipaddr}",
+        "tooltip-format-ethernet": "{ifname}  ·  {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "No connection",
+        "max-length": 25,
+        "on-click": "~/.config/waybar/scripts/wifi.sh"
+    },
+    // =========================================================================
+    // RIGHT — BLUETOOTH
+    // =========================================================================
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
+        "format-off": "󰂲",
+        "tooltip-format": "󰂯  {status}",
+        "tooltip-format-connected": "{controller_alias}\n{num_connections} connected · {device_enumerate}",
+        "tooltip-format-off": "Bluetooth off",
+        "on-click": "~/.config/waybar/scripts/bluetooth.sh"
+    },
+    // =========================================================================
+    // RIGHT — DUNST
+    // =========================================================================
+    "custom/dunst": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/dunst.sh",
+        "interval": 3,
+        "on-click": "dunstctl history-pop",
+        "on-click-right": "dunstctl set-paused toggle && pkill -RTMIN+9 waybar",
+        "on-click-middle": "dunstctl close-all",
+        "signal": 9
+    }
+}
