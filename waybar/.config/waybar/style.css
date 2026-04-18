@@ -95,11 +95,11 @@ tooltip label {
     padding: 0 6px 0 10px;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
 }
 
@@ -132,12 +132,22 @@ tooltip label {
 }
 
 /* ── CPU ────────────────────────────────────────────────────────────────────── */
-#cpu.warning  { color: #D29922; }
-#cpu.critical { color: #F85149; }
+#cpu.warning {
+    color: #D29922;
+}
+
+#cpu.critical {
+    color: #F85149;
+}
 
 /* ── Memory ─────────────────────────────────────────────────────────────────── */
-#memory.warning  { color: #D29922; }
-#memory.critical { color: #F85149; }
+#memory.warning {
+    color: #D29922;
+}
+
+#memory.critical {
+    color: #F85149;
+}
 
 /* ── Audio ──────────────────────────────────────────────────────────────────── */
 #pulseaudio.muted {
@@ -170,7 +180,7 @@ tooltip label {
 
 /* ── Laptop-only modules (uncomment when on laptop) ─────────────────────────── */
 
- #backlight {
+/* #backlight {
     color: #8B949E;
     padding: 0 10px;
     transition: color 0.12s ease;
@@ -178,7 +188,7 @@ tooltip label {
 
 #backlight:hover {
     color: #C9D1D9;
-}
+} */
 
 /* #battery {
     color: #8B949E;

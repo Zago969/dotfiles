@@ -9,6 +9,7 @@ bluetui
 brightnessctl
 awww
 wl-clipboard
+colord
 hyprshot
 xdg-user-dirs
 networkmanager

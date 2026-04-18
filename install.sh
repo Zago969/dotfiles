@@ -30,7 +30,7 @@ sudo pacman -S --needed --noconfirm git base-devel stow
 if [ -f packages/util.txt ]; then
     echo "Installing util packages..."
     sudo pacman -S --needed --noconfirm - < packages/util.txt
-fi -----------------------------
+fi
 
 # Install core packages
 # -----------------------------

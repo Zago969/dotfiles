@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "margin-top": 6,
-    "height": 34,
+    "height": 32,
     "width": 1900,
     "spacing": 0,
     // =========================================================================
@@ -27,9 +27,9 @@
         "network",
         "custom/separator",
         "bluetooth",
-        "custom/separator",
-        "backlight",
         // ── laptop only ──────────────────────────────────────────────────────
+        // "custom/separator",
+        // "backlight",
         // "custom/separator",
         // "battery",
         // ─────────────────────────────────────────────────────────────────────
@@ -108,21 +108,21 @@
     // =========================================================================
     // RIGHT — LAPTOP ONLY (uncomment on laptop)
     // =========================================================================
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": [
-            "󰌶",
-            "󱩎",
-            "󱩏",
-            "󱩐",
-            "󰖙"
-        ],
-        "on-scroll-up": "brightnessctl set +5%",
-        "on-scroll-down": "brightnessctl set 5%-",
-        "smooth-scrolling-threshold": 1,
-        "tooltip": false
-    },
+    // "backlight": {
+    //     "device": "intel_backlight",
+    //     "format": "{icon} {percent}%",
+    //     "format-icons": [
+    //         "󰌶",
+    //         "󱩎",
+    //         "󱩏",
+    //         "󱩐",
+    //         "󰖙"
+    //     ],
+    //     "on-scroll-up": "brightnessctl set +5%",
+    //     "on-scroll-down": "brightnessctl set 5%-",
+    //     "smooth-scrolling-threshold": 1,
+    //     "tooltip": false
+    // },
     // "battery": {
     //     "states": {
     //         "good":     95,
