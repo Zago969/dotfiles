@@ -9,10 +9,11 @@ bluetui
 brightnessctl
 awww
 wl-clipboard
+cliphist
 colord
 hyprshot
 xdg-user-dirs
 networkmanager
-dolphin
+nemo
 network-manager-applet
 polkit-gnome

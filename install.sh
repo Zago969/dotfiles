@@ -142,6 +142,7 @@ stow nvim
      cp -r assets/themes/* ~/.local/share/themes/
  fi
 
+ xdg-user-dirs-update
 # -----------------------------
 # Completion
 # -----------------------------
