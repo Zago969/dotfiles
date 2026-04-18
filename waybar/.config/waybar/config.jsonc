@@ -18,12 +18,6 @@
     "modules-right": [
         "tray",
         "custom/gap",
-        // ── laptop only ──────────────────────────────────────────────────────
-        // "backlight",
-        // "custom/separator",
-        // "battery",
-        // "custom/separator",
-        // ─────────────────────────────────────────────────────────────────────
         "cpu",
         "custom/separator",
         "memory",
@@ -33,6 +27,12 @@
         "network",
         "custom/separator",
         "bluetooth",
+        "custom/separator",
+        "backlight",
+        // ── laptop only ──────────────────────────────────────────────────────
+        // "custom/separator",
+        // "battery",
+        // ─────────────────────────────────────────────────────────────────────
         "custom/separator",
         "custom/notifications"
     ],
@@ -108,15 +108,21 @@
     // =========================================================================
     // RIGHT — LAPTOP ONLY (uncomment on laptop)
     // =========================================================================
-    // "backlight": {
-    //     "device": "intel_backlight",
-    //     "format": "{icon} {percent}%",
-    //     "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󰖙"],
-    //     "on-scroll-up": "brightnessctl set +5%",
-    //     "on-scroll-down": "brightnessctl set 5%-",
-    //     "smooth-scrolling-threshold": 1,
-    //     "tooltip": false
-    // },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "󰌶",
+            "󱩎",
+            "󱩏",
+            "󱩐",
+            "󰖙"
+        ],
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "smooth-scrolling-threshold": 1,
+        "tooltip": false
+    },
     // "battery": {
     //     "states": {
     //         "good":     95,

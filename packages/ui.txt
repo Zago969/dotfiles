@@ -3,6 +3,5 @@ ttf-jetbrains-mono-nerd
 noto-fonts
 noto-fonts-emoji
 papirus-icon-theme
-breeze-cursors
 kvantum
 qt6ct

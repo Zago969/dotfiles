@@ -1,5 +1,4 @@
 neovim
-git
 wget
 unzip
 htop

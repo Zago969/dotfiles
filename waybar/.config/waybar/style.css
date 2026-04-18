@@ -170,7 +170,7 @@ tooltip label {
 
 /* ── Laptop-only modules (uncomment when on laptop) ─────────────────────────── */
 
-/* #backlight {
+ #backlight {
     color: #8B949E;
     padding: 0 10px;
     transition: color 0.12s ease;
@@ -178,7 +178,7 @@ tooltip label {
 
 #backlight:hover {
     color: #C9D1D9;
-} */
+}
 
 /* #battery {
     color: #8B949E;

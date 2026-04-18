@@ -25,6 +25,13 @@ echo "Installing base dependencies..."
 sudo pacman -S --needed --noconfirm git base-devel stow
 
 # -----------------------------
+# Install util packages
+# -----------------------------
+if [ -f packages/util.txt ]; then
+    echo "Installing util packages..."
+    sudo pacman -S --needed --noconfirm - < packages/util.txt
+fi -----------------------------
+
 # Install core packages
 # -----------------------------
 if [ -f packages/core.txt ]; then

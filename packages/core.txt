@@ -6,11 +6,12 @@ rofi
 ly
 impala
 bluetui
+brightnessctl
 awww
 wl-clipboard
 hyprshot
 xdg-user-dirs
 networkmanager
-thunar
+dolphin
 network-manager-applet
 polkit-gnome
