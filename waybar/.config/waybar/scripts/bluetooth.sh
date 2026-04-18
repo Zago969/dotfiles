@@ -1,1 +1,1 @@
-exec ghostty -e bluetui
+exec kitty -e bluetui

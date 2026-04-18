@@ -1,1 +1,1 @@
-exec ghostty -e impala
+exec kitty -e impala

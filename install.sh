@@ -87,6 +87,7 @@ rm -rf ~/.config/hypr \
        ~/.config/wlogout \
        ~/.config/fastfetch \
        ~/.config/Kvantum \
+       ~/.config/fish \
        ~/.config/nvim \
        ~/.config/gtk-3.0 \
        ~/.config/gtk-4.0
@@ -104,6 +105,7 @@ stow swaync
 stow wlogout
 stow fastfetch
 stow Kvantum
+stow fish
 stow gtk-3.0
 stow gtk-4.0
 stow nvim
@@ -121,17 +123,17 @@ stow nvim
 # -----------------------------
 # Install icons and themes
 # -----------------------------
-# if [ -d assets/icons ]; then
-#     echo "Installing icons..."
-#     mkdir -p ~/.local/share/icons
-#     cp -r assets/icons/* ~/.local/share/icons/
-# fi
+ if [ -d assets/icons ]; then
+     echo "Installing icons..."
+     mkdir -p ~/.local/share/icons
+     cp -r assets/icons/* ~/.local/share/icons/
+ fi
 
-# if [ -d assets/themes ]; then
-#     echo "Installing themes..."
-#     mkdir -p ~/.local/share/themes
-#     cp -r assets/themes/* ~/.local/share/themes/
-# fi
+ if [ -d assets/themes ]; then
+     echo "Installing themes..."
+     mkdir -p ~/.local/share/themes
+     cp -r assets/themes/* ~/.local/share/themes/
+ fi
 
 # -----------------------------
 # Completion

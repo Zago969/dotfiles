@@ -11,5 +11,6 @@ wl-clipboard
 hyprshot
 xdg-user-dirs
 networkmanager
+thunar
 network-manager-applet
 polkit-gnome
