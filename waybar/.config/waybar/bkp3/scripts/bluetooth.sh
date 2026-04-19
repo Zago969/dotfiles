@@ -1,1 +1,0 @@
-exec ghostty -e bluetui

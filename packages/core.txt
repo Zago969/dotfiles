@@ -15,5 +15,7 @@ hyprshot
 xdg-user-dirs
 networkmanager
 nemo
+nemo-fileroller
+file-roller
 network-manager-applet
 polkit-gnome

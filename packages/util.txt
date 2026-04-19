@@ -1,4 +1,12 @@
 neovim
+zathura
+zathura-djvu
+zathura-cb
+zathura-pdf-poppler
+zathura-ps
+swayimg
+haruna
+handlr-regex
 wget
 unzip
 htop

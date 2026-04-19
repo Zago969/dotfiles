@@ -86,6 +86,7 @@ tooltip label {
     margin: 3px 0;
 }
 
+
 /* ── Clock (center pill) ────────────────────────────────────────────────────── */
 #clock {
     background-color: rgba(13, 17, 23, 0.82);
@@ -121,6 +122,7 @@ tooltip label {
 }
 
 /* ── System pill: CPU · Memory · Audio ──────────────────────────────────────── */
+/* These three sit adjacent, sharing one pill background */
 #cpu {
     background-color: rgba(13, 17, 23, 0.82);
     border-radius: 10px 0 0 10px;
@@ -190,7 +192,7 @@ tooltip label {
     color: #C9D1D9;
 }
 
-/* ── Gap spacer ─────────────────────────────────────────────────────────────── */
+/* ── Gap spacer (invisible) ─────────────────────────────────────────────────── */
 #custom-gap {
     background: transparent;
     color: transparent;
@@ -217,12 +219,11 @@ tooltip label {
 #bluetooth.connected { color: #C9D1D9; }
 #bluetooth.off       { color: #3D444D; }
 
-/* =============================================================================
-   LAPTOP ONLY — uncomment the block below when on laptop.
-   In config.jsonc also uncomment: "custom/gap", "backlight", "battery"
-   ============================================================================= */
+/* ── Laptop-only modules ────────────────────────────────────────────────────── */
+/* To add backlight: give it border-radius 10px 0 0 10px, margin 3px 0
+   To add battery:   give it border-radius 0 10px 10px 0, margin 3px 6px 3px 0
+   Add a custom/gap between the connectivity pill and this new pill.
 
-/*
 #backlight {
     background-color: rgba(13, 17, 23, 0.82);
     border-radius: 10px 0 0 10px;
@@ -232,9 +233,7 @@ tooltip label {
     transition: color 0.12s ease;
 }
 
-#backlight:hover {
-    color: #C9D1D9;
-}
+#backlight:hover { color: #C9D1D9; }
 
 #battery {
     background-color: rgba(13, 17, 23, 0.82);
@@ -257,5 +256,4 @@ tooltip label {
 
 @keyframes battery-blink {
     50% { opacity: 0.35; }
-}
-*/
+} */

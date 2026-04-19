@@ -1,15 +1,16 @@
 {
     "layer": "top",
-    "margin-top": 6,
+    "position": "top",
+    "margin-top": 8,
+    "margin-left": 12,
+    "margin-right": 12,
     "height": 34,
-    "width": 1900,
     "spacing": 0,
     // =========================================================================
     // LAYOUT
     // =========================================================================
     "modules-left": [
         "hyprland/workspaces",
-        "custom/separator",
         "hyprland/window"
     ],
     "modules-center": [
@@ -18,23 +19,19 @@
     "modules-right": [
         "tray",
         "custom/gap",
-        // ── laptop only ──────────────────────────────────────────────────────
-        // "backlight",
-        // "custom/separator",
-        // "battery",
-        // "custom/separator",
-        // ─────────────────────────────────────────────────────────────────────
         "cpu",
-        "custom/separator",
         "memory",
-        "custom/separator",
         "pulseaudio",
-        "custom/separator",
+        "custom/gap",
         "network",
-        "custom/separator",
         "bluetooth",
-        "custom/separator",
-        "custom/dunst"
+        // ── laptop only ──────────────────────────────────────────────────────
+        // "custom/gap",
+        // "backlight",
+        // "battery",
+        // ─────────────────────────────────────────────────────────────────────
+        "custom/gap",
+        "custom/notifications"
     ],
     // =========================================================================
     // LEFT
@@ -48,10 +45,9 @@
         "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "hyprland/window": {
-        "max-length": 60,
+        "max-length": 35,
         "separate-outputs": true,
         "rewrite": {
-            // strip common suffixes so you see just the app name
             "(.*) — Mozilla Firefox": "󰈹  $1",
             "(.*) - fish": "  $1",
             "(.*) - zsh": "  $1",
@@ -89,19 +85,13 @@
     // =========================================================================
     // RIGHT — UTILITIES
     // =========================================================================
-    "custom/separator": {
-        "format": "/",
-        "interval": "once",
-        "tooltip": false
-    },
-    // Invisible spacer between tray and first module
     "custom/gap": {
         "format": " ",
         "interval": "once",
         "tooltip": false
     },
     "tray": {
-        "icon-size": 16,
+        "icon-size": 15,
         "spacing": 8,
         "show-passive-items": true
     },
@@ -111,22 +101,18 @@
     // "backlight": {
     //     "device": "intel_backlight",
     //     "format": "{icon} {percent}%",
-    //     "format-icons": ["󰌶", "󱩎", "󱩏", "󱩐", "󰖙"],
+    //     "format-icons": ["󰌶","󱩎","󱩏","󱩐","󰖙"],
     //     "on-scroll-up": "brightnessctl set +5%",
     //     "on-scroll-down": "brightnessctl set 5%-",
     //     "smooth-scrolling-threshold": 1,
     //     "tooltip": false
     // },
     // "battery": {
-    //     "states": {
-    //         "good":     95,
-    //         "warning":  30,
-    //         "critical": 15
-    //     },
-    //     "format":          "{icon} {capacity}%",
+    //     "states": { "good": 95, "warning": 30, "critical": 15 },
+    //     "format": "{icon} {capacity}%",
     //     "format-charging": "󰂄 {capacity}%",
-    //     "format-plugged":  "󰚥 {capacity}%",
-    //     "format-full":     "󰁹",
+    //     "format-plugged": "󰚥 {capacity}%",
+    //     "format-full": "󰁹",
     //     "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
     //     "tooltip-format": "{timeTo}  ·  {power:.1f}W",
     //     "interval": 30
@@ -139,14 +125,14 @@
         "format": "󰍛 {usage}%",
         "format-alt": "󰍛 {avg_frequency:.1f}GHz",
         "tooltip": false,
-        "on-click": "ghostty -e btop"
+        "on-click": "kitty -e btop"
     },
     "memory": {
         "interval": 10,
         "format": "󰘚 {percentage}%",
         "format-alt": "󰘚 {used:0.1f}G",
         "tooltip-format": "{used:0.1f} GiB / {total:0.1f} GiB",
-        "on-click": "ghostty -e btop"
+        "on-click": "kitty -e btop"
     },
     // =========================================================================
     // RIGHT — AUDIO
@@ -156,19 +142,13 @@
         "format-bluetooth": "󰂰 {volume}%",
         "format-muted": "󰖁 muted",
         "format-icons": {
-            "default": [
-                "󰕿",
-                "󰖀",
-                "󰕾"
-            ]
+            "default": ["󰕿","󰖀","󰕾"]
         },
         "scroll-step": 2,
         "on-click": "pavucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "tooltip-format": "{desc}",
-        "ignored-sinks": [
-            "Easy Effects Sink"
-        ]
+        "ignored-sinks": ["Easy Effects Sink"]
     },
     // =========================================================================
     // RIGHT — NETWORK
@@ -178,13 +158,7 @@
         "format-wifi": "{icon} {essid}",
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰤭 offline",
-        "format-icons": [
-            "󰤯",
-            "󰤟",
-            "󰤢",
-            "󰤥",
-            "󰤨"
-        ],
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "tooltip-format-wifi": "{essid}\n{signalStrength}%  ·  {ipaddr}",
         "tooltip-format-ethernet": "{ifname}  ·  {ipaddr}/{cidr}",
         "tooltip-format-disconnected": "No connection",
@@ -204,17 +178,9 @@
         "tooltip-format-off": "Bluetooth off",
         "on-click": "~/.config/waybar/scripts/bluetooth.sh"
     },
-    // =========================================================================
-    // RIGHT — DUNST
-    // =========================================================================
-    "custom/dunst": {
-        "format": "{}",
-        "return-type": "json",
-        "exec": "~/.config/waybar/scripts/dunst.sh",
-        "interval": 3,
-        "on-click": "dunstctl history-pop",
-        "on-click-right": "dunstctl set-paused toggle && pkill -RTMIN+9 waybar",
-        "on-click-middle": "dunstctl close-all",
-        "signal": 9
+    "custom/notifications": {
+        "format": "󰂚",
+        "tooltip": false,
+        "on-click": "swaync-client -t"
     }
 }
