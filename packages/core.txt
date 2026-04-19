@@ -7,6 +7,7 @@ ly
 impala
 bluetui
 brightnessctl
+playerctl
 awww
 wl-clipboard
 cliphist
@@ -14,8 +15,14 @@ colord
 hyprshot
 xdg-user-dirs
 networkmanager
-nemo
-nemo-fileroller
 file-roller
+tumbler
+thunar
+thunar-archive-plugin
+ffmpegthumbnailer
+libgsf
+freetype2
+poppler-glib
+xdg-desktop-portal-hyprland
 network-manager-applet
 polkit-gnome

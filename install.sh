@@ -7,9 +7,9 @@ echo "Starting dotfiles installation..."
 # -----------------------------
 # Check for Arch-based system
 # -----------------------------
-if ! command -v pacman &> /dev/null; then
-    echo "This script supports Arch-based systems only."
-    exit 1
+if ! command -v pacman &>/dev/null; then
+  echo "This script supports Arch-based systems only."
+  exit 1
 fi
 
 # -----------------------------
@@ -28,31 +28,31 @@ sudo pacman -S --needed --noconfirm git base-devel stow
 # Install util packages
 # -----------------------------
 if [ -f packages/util.txt ]; then
-    echo "Installing util packages..."
-    sudo pacman -S --needed --noconfirm - < packages/util.txt
+  echo "Installing util packages..."
+  sudo pacman -S --needed --noconfirm - <packages/util.txt
 fi
 
 # Install core packages
 # -----------------------------
 if [ -f packages/core.txt ]; then
-    echo "Installing core packages..."
-    sudo pacman -S --needed --noconfirm - < packages/core.txt
+  echo "Installing core packages..."
+  sudo pacman -S --needed --noconfirm - <packages/core.txt
 fi
 
 # -----------------------------
 # Install UI packages
 # -----------------------------
 if [ -f packages/ui.txt ]; then
-    echo "Installing UI packages..."
-    sudo pacman -S --needed --noconfirm - < packages/ui.txt
+  echo "Installing UI packages..."
+  sudo pacman -S --needed --noconfirm - <packages/ui.txt
 fi
 
 # -----------------------------
 # Install Hyprland packages
 # -----------------------------
 if [ -f packages/hypr.txt ]; then
-    echo "Installing Hyprland packages..."
-    sudo pacman -S --needed --noconfirm - < packages/hypr.txt
+  echo "Installing Hyprland packages..."
+  sudo pacman -S --needed --noconfirm - <packages/hypr.txt
 fi
 
 # -----------------------------
@@ -87,17 +87,18 @@ cp -r ~/.config/* ~/.config_backup/ 2>/dev/null || true
 # -----------------------------
 echo "Removing existing configuration directories..."
 rm -rf ~/.config/hypr \
-       ~/.config/waybar \
-       ~/.config/kitty \
-       ~/.config/rofi \
-       ~/.config/swaync \
-       ~/.config/wlogout \
-       ~/.config/fastfetch \
-       ~/.config/Kvantum \
-       ~/.config/fish \
-       ~/.config/nvim \
-       ~/.config/gtk-3.0 \
-       ~/.config/gtk-4.0
+  ~/.config/waybar \
+  ~/.config/kitty \
+  ~/.config/rofi \
+  ~/.config/swaync \
+  ~/.config/wlogout \
+  ~/.config/fastfetch \
+  ~/.config/Kvantum \
+  ~/.config/fish \
+  ~/.config/nvim \
+  ~/.config/gtk-3.0 \
+  ~/.config/gtk-4.0 \
+  ~/.config/xdg-desktop-portal
 
 # -----------------------------
 # Apply dotfiles using stow
@@ -116,6 +117,8 @@ stow fish
 stow gtk-3.0
 stow gtk-4.0
 stow nvim
+stow xdg-portal
+stow mimelist
 
 # -----------------------------
 # Install fonts
@@ -130,19 +133,19 @@ stow nvim
 # -----------------------------
 # Install icons and themes
 # -----------------------------
- if [ -d assets/icons ]; then
-     echo "Installing icons..."
-     mkdir -p ~/.local/share/icons
-     cp -r assets/icons/* ~/.local/share/icons/
- fi
+if [ -d assets/icons ]; then
+  echo "Installing icons..."
+  mkdir -p ~/.local/share/icons
+  cp -r assets/icons/* ~/.local/share/icons/
+fi
 
- if [ -d assets/themes ]; then
-     echo "Installing themes..."
-     mkdir -p ~/.local/share/themes
-     cp -r assets/themes/* ~/.local/share/themes/
- fi
+if [ -d assets/themes ]; then
+  echo "Installing themes..."
+  mkdir -p ~/.local/share/themes
+  cp -r assets/themes/* ~/.local/share/themes/
+fi
 
- xdg-user-dirs-update
+xdg-user-dirs-update
 # -----------------------------
 # Completion
 # -----------------------------

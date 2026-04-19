@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "margin-top": 8,
+    "margin-top": 6,
     "margin-left": 12,
     "margin-right": 12,
     "height": 34,
@@ -153,18 +153,19 @@
     // =========================================================================
     // RIGHT — NETWORK
     // =========================================================================
-    "network": {
-        "interface": "wlan0",
-        "format-wifi": "{icon} {essid}",
-        "format-ethernet": "󰈀 {ifname}",
-        "format-disconnected": "󰤭 offline",
-        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-        "tooltip-format-wifi": "{essid}\n{signalStrength}%  ·  {ipaddr}",
-        "tooltip-format-ethernet": "{ifname}  ·  {ipaddr}/{cidr}",
-        "tooltip-format-disconnected": "No connection",
-        "max-length": 25,
-        "on-click": "~/.config/waybar/scripts/wifi.sh"
-    },
+"network": {
+    "interface": "eno1",
+    "ignored-interfaces": ["ipv6leakintrf0", "tailscale0", "proton0"],
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "󰤭 offline",
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+    "tooltip-format-wifi": "{essid}\n{signalStrength}%  ·  {ipaddr}",
+    "tooltip-format-ethernet": "{ifname}  ·  {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "No connection",
+    "max-length": 25,
+    "on-click": "~/.config/waybar/scripts/wifi.sh"
+},
     // =========================================================================
     // RIGHT — BLUETOOTH
     // =========================================================================

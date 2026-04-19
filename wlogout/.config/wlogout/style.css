@@ -31,14 +31,18 @@ button label {
 
 /* HOVER (your cyan style preserved) */
 button:hover {
-  border: 2px solid #00ffff;
-  background-color: rgba(0,255,255,0.1);
-  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  /* border: 2px solid #00ffff; */
+  border: 2px solid #E6EEF3;
+  /* background-color: rgba(0,255,255,0.1); */
+  background-color: rgba(139, 148, 158, 0.55);
+  /* box-shadow: 0 0 20px rgba(0,255,255,0.3); */
+  box-shadow: 0 0 20px rgba(139, 148, 158, 0.55);
 }
 
 /* FOCUS */
 button:focus {
-  border: 2px solid #6ee7ff;
+  /* border: 2px solid #6ee7ff; */
+  border: 2px solid #E6EEF3;
 }
 
 /*  ICONS */
