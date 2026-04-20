@@ -1,1 +1,0 @@
-exec kitty -e impala

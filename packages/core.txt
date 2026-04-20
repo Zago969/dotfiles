@@ -1,15 +1,9 @@
 hyprland
-waybar
-wlogout
 kitty
 rofi
 ly
-impala
-bluetui
 brightnessctl
 playerctl
-awww
-wl-clipboard
 cliphist
 colord
 hyprshot

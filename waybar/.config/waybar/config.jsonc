@@ -23,7 +23,7 @@
         "memory",
         "pulseaudio",
         "custom/gap",
-        "network",
+        "custom/network",
         "bluetooth",
         // ── laptop only: uncomment all three lines below ──────────────────────
         // "custom/gap",
@@ -142,30 +142,28 @@
         "format-bluetooth": "󰂰 {volume}%",
         "format-muted": "󰖁 muted",
         "format-icons": {
-            "default": ["󰕿","󰖀","󰕾"]
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
         },
         "scroll-step": 2,
         "on-click": "pavucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "tooltip-format": "{desc}",
-        "ignored-sinks": ["Easy Effects Sink"]
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
     },
     // =========================================================================
     // RIGHT — NETWORK
     // =========================================================================
-"network": {
-    "interface": "eno1",
-    "ignored-interfaces": ["ipv6leakintrf0", "tailscale0", "proton0"],
-    "format-wifi": "{icon} {essid}",
-    "format-ethernet": "󰈀 {ifname}",
-    "format-disconnected": "󰤭 offline",
-    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-    "tooltip-format-wifi": "{essid}\n{signalStrength}%  ·  {ipaddr}",
-    "tooltip-format-ethernet": "{ifname}  ·  {ipaddr}/{cidr}",
-    "tooltip-format-disconnected": "No connection",
-    "max-length": 25,
-    "on-click": "~/.config/waybar/scripts/wifi.sh"
-},
+    "custom/network": {
+        "exec": "~/.config/waybar/scripts/network.sh",
+        "interval": 5,
+        "on-click": "~/.config/waybar/scripts/wifi_menu.sh"
+    },
     // =========================================================================
     // RIGHT — BLUETOOTH
     // =========================================================================
@@ -180,8 +178,17 @@
         "on-click": "~/.config/waybar/scripts/bluetooth.sh"
     },
     "custom/notifications": {
-        "format": "󰂚",
-        "tooltip": false,
-        "on-click": "swaync-client -t"
+        "return-type": "json",
+        "interval": 3,
+        "exec": "~/.config/waybar/scripts/notification.sh",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d",
+        "escape": true,
+        "tooltip": true
     }
+    // "custom/notifications": {
+    //     "format": "󰂚",
+    //     "tooltip": false,
+    //     "on-click": "swaync-client -t"
+    // }
 }

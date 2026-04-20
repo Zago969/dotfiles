@@ -149,7 +149,7 @@ tooltip label {
 }
 
 /* ── Connectivity pill: Network · Bluetooth ─────────────────────────────────── */
-#network {
+#custom-network {
     background-color: rgba(13, 17, 23, 0.82);
     border-radius: 10px 0 0 10px;
     color: #8B949E;
@@ -171,7 +171,8 @@ tooltip label {
 #cpu:hover,
 #memory:hover,
 #pulseaudio:hover,
-#network:hover,
+/* #network:hover, */
+#custom-network:hover,
 #bluetooth:hover {
     color: #C9D1D9;
 }
