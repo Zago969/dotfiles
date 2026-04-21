@@ -11,8 +11,8 @@ xdg-user-dirs
 networkmanager
 file-roller
 tumbler
-thunar
-thunar-archive-plugin
+nemo
+nemo-fileroller
 ffmpegthumbnailer
 libgsf
 freetype2

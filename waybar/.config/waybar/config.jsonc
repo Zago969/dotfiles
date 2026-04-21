@@ -186,9 +186,4 @@
         "escape": true,
         "tooltip": true
     }
-    // "custom/notifications": {
-    //     "format": "󰂚",
-    //     "tooltip": false,
-    //     "on-click": "swaync-client -t"
-    // }
 }
