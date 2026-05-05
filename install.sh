@@ -70,10 +70,10 @@ fi
 # -----------------------------
 # Install AUR packages
 # -----------------------------
-# if [ -f packages/aur.txt ]; then
-#     echo "Installing AUR packages..."
-#     paru -S --needed --noconfirm - < packages/aur.txt
-# fi
+if [ -f packages/aur.txt ]; then
+    echo "Installing AUR packages..."
+    paru -S --needed --noconfirm - < packages/aur.txt
+fi
 
 # -----------------------------
 # Backup existing configs
