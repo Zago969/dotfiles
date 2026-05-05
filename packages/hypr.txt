@@ -4,4 +4,3 @@ hypridle
 hyprpicker
 swaync
 waybar
-wlogout
