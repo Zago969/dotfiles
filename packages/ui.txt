@@ -3,5 +3,3 @@ ttf-jetbrains-mono-nerd
 noto-fonts
 noto-fonts-emoji
 papirus-icon-theme
-kvantum
-qt6ct

@@ -58,21 +58,21 @@ fi
 # -----------------------------
 # Install yay (AUR helper)
 # -----------------------------
-# if ! command -v yay &> /dev/null; then
-#     echo "Installing yay AUR helper..."
-#     git clone https://aur.archlinux.org/yay.git
-#     cd yay
-#     makepkg -si --noconfirm
-#     cd ..
-#     rm -rf yay
-# fi
+if ! command -v paru &> /dev/null; then
+    echo "Installing yay AUR helper..."
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf paru
+fi
 
 # -----------------------------
 # Install AUR packages
 # -----------------------------
 # if [ -f packages/aur.txt ]; then
 #     echo "Installing AUR packages..."
-#     yay -S --needed --noconfirm - < packages/aur.txt
+#     paru -S --needed --noconfirm - < packages/aur.txt
 # fi
 
 # -----------------------------
@@ -92,8 +92,6 @@ rm -rf ~/.config/hypr \
   ~/.config/rofi \
   ~/.config/swaync \
   ~/.config/wlogout \
-  ~/.config/fastfetch \
-  ~/.config/Kvantum \
   ~/.config/fish \
   ~/.config/nvim \
   ~/.config/gtk-3.0 \
@@ -111,8 +109,6 @@ stow kitty
 stow rofi
 stow swaync
 stow wlogout
-stow fastfetch
-stow Kvantum
 stow fish
 stow gtk-3.0
 stow gtk-4.0
@@ -146,6 +142,7 @@ if [ -d assets/themes ]; then
 fi
 
 xdg-user-dirs-update
+chsh -s /usr/bin/fish
 # -----------------------------
 # Completion
 # -----------------------------

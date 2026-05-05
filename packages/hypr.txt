@@ -1,4 +1,5 @@
 hyprlock
+hyprshot
 hypridle
 hyprpicker
 swaync
