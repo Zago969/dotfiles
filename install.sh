@@ -142,7 +142,8 @@ if [ -d assets/themes ]; then
 fi
 
 xdg-user-dirs-update
-chsh -s /usr/bin/fish
+chsh -s /usr/bin/fish --noconfirm
+systemctl enable ly@tty2 --noconfirm
 # -----------------------------
 # Completion
 # -----------------------------
